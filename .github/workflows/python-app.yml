@@ -37,5 +37,6 @@ jobs:
         URL: ${{ secrets.URL }}
         FROMEMAIL: ${{ secrets.FROMEMAIL }}
         TOEMAIL: ${{ secrets.TOEMAIL }}
+        CSEMAIL: ${{ secrets.CSEMAIL }}
       run: |
         python ccc.py
