@@ -13,6 +13,7 @@ def send_email(file_path,password,from_email,to_email, cc_email):
     msg['To'] = to_email
     msg['Cc'] = cc_email  # 添加抄送地址
     msg['Subject'] = "恭喜！2024MCM结果已出!"
+    print(to_email)
 
     # 添加附件
     with open(file_path, "rb") as attachment:
@@ -32,7 +33,7 @@ def send_email(file_path,password,from_email,to_email, cc_email):
     server.login(from_email, password)  # 使用你的邮箱地址和密码登录
     print("login susses!")
     text = msg.as_string()
-    server.sendmail(from_email, [to_email, cc_email], text)  # 发送给主收件人和抄送邮箱地址
+    server.sendmail(from_email, to_email, text)  # 发送给主收件人和抄送邮箱地址
     server.quit()
 
 # 请求网站并下载PDF文件
