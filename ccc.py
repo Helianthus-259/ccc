@@ -33,7 +33,7 @@ def send_email(file_path,password,from_email,to_email, cc_email):
     server.login(from_email, password)  # 使用你的邮箱地址和密码登录
     print("login susses!")
     text = msg.as_string()
-    server.sendmail(from_email, to_email, text)  # 发送给主收件人和抄送邮箱地址
+    server.sendmail(from_email, [to_email, cc_email], text)  # 发送给主收件人和抄送邮箱地址
     server.quit()
 
 # 请求网站并下载PDF文件
